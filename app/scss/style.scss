@@ -1,0 +1,78 @@
+@import "fonts";
+@import "media";
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 66px 0 70px;;
+}
+
+body {
+  font-family: 'HelveticaNeueCyrLight', sans-serif;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none; 
+}
+
+button {
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 202px;
+  height: 46px;
+  border: 0px;
+}
+
+li:hover{
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.header__logo {
+  font-family: 'HelveticaNeueCyrRoman', sans-serif;
+  font-size: 24px;
+  padding-top: 30px;
+}
+
+.header__menu {
+  padding-top: 30px;
+  li {
+    display: inline-block;
+    a {
+      padding: 0 14px 14px;
+    }
+  }
+}
+
+.main__header {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 39px;
+  padding-bottom: 67px;
+}
+
+
+
+.articles-nav {
+  display: flex;
+  &__item {
+    display: inline-block;
+    text-align: center;
+    button {
+      padding: 0 14px 14px;
+    }
+  }
+}
+
+
+@import "libs";
