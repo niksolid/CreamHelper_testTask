@@ -73,6 +73,7 @@ li:hover{
   &__item {
     display: inline-block;
     text-align: center;
+    font-size: 18px;
     button {
       // padding: 0;
       background-color: #f7f7f7;
@@ -88,7 +89,6 @@ li:hover{
   }
   &__wrapper {
     margin: 0;
-    font-size: 18px;
   }
 }
 
@@ -96,7 +96,7 @@ li:hover{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 -10px;
+  margin: 0 -10px 38px;
   color: #ffffff;
   
   &__text {
@@ -153,5 +153,21 @@ li:hover{
 }
 
 
+.article-more{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 141px;
+  &__btn {
+    border-radius: 4.07692px;
+    border: 0.96875px solid #CCCCCC;
+  }
+}
+
+.footer {
+  margin: 105px auto 22px;
+  &__img {
+    max-width: 100%;
+  }
+}
 
 @import "libs";

@@ -92,6 +92,7 @@ li:hover {
 .articles-nav__item {
   display: inline-block;
   text-align: center;
+  font-size: 18px;
 }
 
 .articles-nav__item button {
@@ -109,7 +110,6 @@ li:hover {
 
 .articles-nav__wrapper {
   margin: 0;
-  font-size: 18px;
 }
 
 .article {
@@ -121,7 +121,7 @@ li:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 -10px;
+  margin: 0 -10px 38px;
   color: #ffffff;
 }
 
@@ -184,6 +184,25 @@ li:hover {
   background: linear-gradient(0deg, #AEAEAE 32.91%, rgba(174, 174, 174, 0) 100.12%);
   position: relative;
   top: 152px;
+}
+
+.article-more {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 141px;
+}
+
+.article-more__btn {
+  border-radius: 4.07692px;
+  border: 0.96875px solid #CCCCCC;
+}
+
+.footer {
+  margin: 105px auto 22px;
+}
+
+.footer__img {
+  max-width: 100%;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
