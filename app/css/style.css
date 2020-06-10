@@ -17,6 +17,18 @@
           box-sizing: border-box;
 }
 
+.clearfix {
+  width: 100%;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  width: 100%;
+  height: 0;
+  clear: both;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 66px 0 70px;
@@ -151,13 +163,15 @@ li:hover {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 5px;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
 }
 
 .article__type-1 {
   background-image: url(../img/article-npvp.jpg);
-  background-color: #000000;
-  -ms-flex-preferred-size: 530px;
-      flex-basis: 530px;
+  -webkit-box-flex: 48.18;
+      -ms-flex-positive: 48.18;
+          flex-grow: 48.18;
 }
 
 .article__type-1 .article__text {
@@ -166,14 +180,16 @@ li:hover {
 
 .article__type-2 {
   background-image: url(../img/article-tendons.jpg);
-  -ms-flex-preferred-size: 212px;
-      flex-basis: 212px;
+  -webkit-box-flex: 19.27;
+      -ms-flex-positive: 19.27;
+          flex-grow: 19.27;
 }
 
 .article__type-3 {
   background-image: url(../img/article-bandage.jpg);
-  -ms-flex-preferred-size: 318px;
-      flex-basis: 318px;
+  -webkit-box-flex: 28.91;
+      -ms-flex-positive: 28.91;
+          flex-grow: 28.91;
 }
 
 .article__gradient {
@@ -203,6 +219,12 @@ li:hover {
 
 .footer__img {
   max-width: 100%;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    padding: 0 20px 0;
+  }
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
