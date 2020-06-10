@@ -16,7 +16,7 @@
       clearfix.remove();
       console.log('del clearfix');
     }
-    if (scrollWidth >= 1240) {
+    if (scrollWidth >= 1000) {
       for (let i = 2; i <= articleItems.length - 1; i = i + 3) {
         let lineBreak = document.createElement('div');
         lineBreak.classList.add('clearfix');

@@ -1,4 +1,5 @@
 @import "fonts";
+@import "components";
 
 * {
   box-sizing: border-box;
@@ -30,6 +31,10 @@ a {
   text-decoration: none; 
 }
 
+ul {
+  padding-left: 0;
+}
+
 button {
   border-radius: 5px;
   background-color: #ffffff;
@@ -46,7 +51,7 @@ li:hover{
 .header__top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
 }
 
 .header__logo {
@@ -56,7 +61,7 @@ li:hover{
 }
 
 .header__menu {
-  padding-top: 21px;
+  padding-top: 35px;
   li {
     display: inline-block;
     padding: 0 13px;
@@ -79,17 +84,17 @@ li:hover{
 
 .articles-nav {
   margin: 0 auto 54.9px;
-  text-align: center;
   &__item {
     display: inline-block;
     text-align: center;
     font-size: 18px;
+    flex-basis: 202px;
+    margin: 0 10px;
     button {
-      // padding: 0;
       background-color: #f7f7f7;
       border-radius: 4.07692px;
       padding: 0;
-      margin: 0 10px;
+      width: 100%;
     }
   }
   &__btn.is-active {
@@ -99,6 +104,8 @@ li:hover{
   }
   &__wrapper {
     margin: 0;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -135,6 +142,10 @@ li:hover{
   background-position: center;
   border-radius: 5px;
   flex-basis: 0;
+  display: none;
+  &.is-active{
+    display: block;
+  }
 }
 
 .article__type-1 {
@@ -177,6 +188,10 @@ li:hover{
   &__img {
     max-width: 100%;
   }
+}
+
+.footer__img-mini {
+  display: none;
 }
 
 @import "media";

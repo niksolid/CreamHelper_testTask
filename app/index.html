@@ -17,14 +17,23 @@
           Логотип
         </div>
         <nav class="header__menu">
-          <ul>
-            <li><a href="#"></a>Причина боли</li>
-            <li><a href="#"></a>О креме</li>
-            <li><a href="#"></a>О наболевшем</li>
-            <li><a href="#"></a>Специалистам</li>
-            <li><a href="#"></a>Вопрос-Ответ</li>
-            <li><a href="#"></a>Посмотреть цену</li>
-          </ul>
+          <div class="header__menu-hamburger">
+            <button class="menu-btn" type="button">
+              <span class="menu-btn__box">
+                <span class="menu-btn__inner"></span>
+              </span>
+            </button>
+          </div>
+          <div class="menu-btn__mode">
+            <ul class="menu-btn__activate">
+              <li><a href="#"></a>Причина боли</li>
+              <li><a href="#"></a>О креме</li>
+              <li><a href="#"></a>О наболевшем</li>
+              <li><a href="#"></a>Специалистам</li>
+              <li><a href="#"></a>Вопрос-Ответ</li>
+              <li><a href="#"></a>Посмотреть цену</li>
+            </ul>
+          </div>
         </nav>
       </div>
     </div>
@@ -56,7 +65,7 @@
       </nav>
 
       <div class="article">
-        <div class="article__item article__in-sport article__type-1">
+        <div class="article__item article__in-sport article__type-1 is-active">
           <div class="article__text">
             <div class="article__hashtag">
               #травмы
@@ -67,7 +76,7 @@
           </div>
           <div class="article__gradient"></div>
         </div>
-        <div class="article__item article__in-sport article__type-2">
+        <div class="article__item article__in-sport article__type-2 is-active">
           <div class="article__text">
             <div class="article__hashtag">
               #травмы
@@ -79,7 +88,7 @@
           <div class="article__gradient"></div>
         </div>
 
-        <div class="article__item article__in-sport article__type-3">
+        <div class="article__item article__in-sport article__type-3 is-active">
           <div class="article__text">
             <div class="article__hashtag">
               #травмы
@@ -142,8 +151,10 @@
   <footer class="footer">
     <div class="container">
       <img src="img/footer.png" alt="" class="footer__img">
+      <img src="img/footer-mini.png" alt="" class="footer__img-mini">
     </div>
   </footer>
   <script src="js/script.js"></script>
 </body>
+
 </html>
