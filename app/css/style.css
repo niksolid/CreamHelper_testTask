@@ -202,21 +202,30 @@ li:hover {
   color: #ffffff;
 }
 
-.article__text {
-  padding: 0 30px;
+.article__inner {
   position: relative;
-  top: 250px;
-  z-index: 1;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.article__text {
+  position: relative;
+  padding: 0 30px;
 }
 
 .article__hashtag {
   font-size: 14px;
-  position: relative;
-  bottom: 40px;
+  margin-bottom: 42px;
 }
 
 .article__title {
   font-size: 22px;
+  margin-bottom: 26px;
 }
 
 .article__item {
@@ -244,10 +253,6 @@ li:hover {
           flex-grow: 48.18;
 }
 
-.article__type-1 .article__text {
-  top: 270px;
-}
-
 .article__type-2 {
   background-image: url(../img/article-tendons.jpg);
   -webkit-box-flex: 19.27;
@@ -264,12 +269,12 @@ li:hover {
 
 .article__gradient {
   width: 100%;
-  height: 145.82px;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(32.91%, #AEAEAE), color-stop(100.12%, rgba(174, 174, 174, 0)));
   background: -o-linear-gradient(bottom, #AEAEAE 32.91%, rgba(174, 174, 174, 0) 100.12%);
   background: linear-gradient(0deg, #AEAEAE 32.91%, rgba(174, 174, 174, 0) 100.12%);
-  position: relative;
-  top: 152px;
+  position: absolute;
+  height: 35%;
+  bottom: 0;
 }
 
 .article-more {

@@ -115,20 +115,23 @@ li:hover{
   justify-content: center;
   margin: 0 -10px 38px;
   color: #ffffff;
-  
-  &__text {
-    padding: 0 30px;
+  &__inner {
     position: relative;
-    top: 250px;
-    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;  
+  }
+  &__text {
+    position: relative;
+    padding: 0 30px;
   }
   &__hashtag {
     font-size: 14px;
-    position: relative;
-    bottom: 40px;
+    margin-bottom: 42px;
   }
   &__title {
     font-size: 22px;
+    margin-bottom: 26px;
   }
 }
 
@@ -151,9 +154,6 @@ li:hover{
 .article__type-1 {
   background-image: url(../img/article-npvp.jpg);
   flex-grow: 48.18;
-  .article__text{
-    top: 270px;
-  }
 }
 .article__type-2 {
   background-image: url(../img/article-tendons.jpg);
@@ -166,10 +166,10 @@ li:hover{
 
 .article__gradient {
   width: 100%;
-  height: 145.82px;
   background: linear-gradient(0deg, #AEAEAE 32.91%, rgba(174, 174, 174, 0) 100.12%);
-  position: relative;
-  top: 152px;
+  position: absolute;
+  height: 35%;
+  bottom: 0;
 }
 
 

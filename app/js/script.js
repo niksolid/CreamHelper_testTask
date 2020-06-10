@@ -23,7 +23,7 @@
         lineBreak.classList.add('maxWidth');
         articleItems[i].after(lineBreak);
       }
-    } else if (scrollWidth >= 768) {
+    } else if (scrollWidth >= 650) {
       for (let i = 1; i <= articleItems.length - 1; i = i + 2) {
 
         let lineBreak = document.createElement('div');
