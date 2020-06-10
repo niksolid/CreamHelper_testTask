@@ -8,6 +8,7 @@
 .container {
   margin: 0 auto;
   padding: 0 66px 0 70px;;
+  max-width: 1240px;
 }
 
 body {
@@ -35,7 +36,7 @@ li:hover{
 .header__top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .header__logo {
@@ -45,11 +46,14 @@ li:hover{
 }
 
 .header__menu {
-  padding-top: 30px;
+  padding-top: 21px;
   li {
     display: inline-block;
+    padding: 0 13px;
+
     a {
-      padding: 0 14px 14px;
+      padding: 0;
+      letter-spacing: 0.1pt;
     }
   }
 }
@@ -64,15 +68,90 @@ li:hover{
 
 
 .articles-nav {
-  display: flex;
+  margin: 0 auto 54.9px;
+  text-align: center;
   &__item {
     display: inline-block;
     text-align: center;
     button {
-      padding: 0 14px 14px;
+      // padding: 0;
+      background-color: #f7f7f7;
+      border-radius: 4.07692px;
+      padding: 0;
+      margin: 0 10px;
     }
   }
+  &__btn.is-active {
+    color: #ffffff;
+    background-color: #AEAEAE;
+    border-radius: 4.07692px;    
+  }
+  &__wrapper {
+    margin: 0;
+    font-size: 18px;
+  }
 }
+
+.article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -10px;
+  color: #ffffff;
+  
+  &__text {
+    padding: 0 30px;
+    position: relative;
+    top: 250px;
+    z-index: 1;
+  }
+  &__hashtag {
+    font-size: 14px;
+    position: relative;
+    bottom: 40px;
+  }
+  &__title {
+    font-size: 22px;
+  }
+}
+
+.article__item {
+  height: 364px;
+  overflow: hidden;
+  margin: 0 10px 22px;
+  min-width: 212px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.article__type-1 {
+  background-image: url(../img/article-npvp.jpg);
+  background-color: #000000;
+  flex-basis: 530px;
+  .article__text{
+    top: 270px;
+  }
+
+}
+.article__type-2 {
+  background-image: url(../img/article-tendons.jpg);
+  flex-basis: 212px;
+}
+.article__type-3 {
+  background-image: url(../img/article-bandage.jpg);
+  flex-basis: 318px;
+}
+
+.article__gradient {
+  width: 100%;
+  height: 145.82px;
+  background: linear-gradient(0deg, #AEAEAE 32.91%, rgba(174, 174, 174, 0) 100.12%);
+  position: relative;
+  top: 152px;
+}
+
 
 
 @import "libs";
