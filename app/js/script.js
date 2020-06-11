@@ -3,9 +3,9 @@
   let articleSection = document.querySelector('.article');
   let articleItems = articleSection.querySelectorAll('.article__item');
   let moreBtn = document.querySelector('.article-more__btn');
-  let articlesSport = document.querySelectorAll('#in-sport');
-  let articlesHome = document.querySelectorAll('#in-home');
-  let articlesLife = document.querySelectorAll('#in-life');
+  let articlesSport = document.querySelectorAll('#sport');
+  let articlesHome = document.querySelectorAll('#home');
+  let articlesLife = document.querySelectorAll('#life');
   let articles = document.querySelector('.article');
   let articlesNav = document.querySelector('.articles-nav');
 
@@ -163,9 +163,9 @@
 
 
 
-  let btnCategorySport = articlesNav.querySelector('.articles-nav__btn#in-sport');
-  let btnCategoryHome = articlesNav.querySelector('.articles-nav__btn#in-home');
-  let btnCategoryLife = articlesNav.querySelector('.articles-nav__btn#in-life');
+  let btnCategorySport = articlesNav.querySelector('.articles-nav__btn#sport');
+  let btnCategoryHome = articlesNav.querySelector('.articles-nav__btn#home');
+  let btnCategoryLife = articlesNav.querySelector('.articles-nav__btn#life');
 
   btnCategorySport.onclick = function() {
     articlesHiddenfunction();
