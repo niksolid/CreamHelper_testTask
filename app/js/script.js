@@ -3,27 +3,32 @@
   let articleSection = document.querySelector('.article');
   let articleItems = articleSection.querySelectorAll('.article__item');
   let moreBtn = document.querySelector('.article-more__btn');
-  let articlesSport = document.querySelectorAll('#sport');
-  let articlesHome = document.querySelectorAll('#home');
-  let articlesLife = document.querySelectorAll('#life');
+  let articlesSport = articleSection.querySelectorAll('.sport');
+  let articlesHome = articleSection.querySelectorAll('.home');
+  let articlesLife = articleSection.querySelectorAll('.life');
   let articles = document.querySelector('.article');
   let articlesNav = document.querySelector('.articles-nav');
+  console.log(articlesSport);
+  console.log(articlesHome);
+  console.log(articlesLife);
 
   moreArticles(articlesSport);
   scrollWidthFunction();
 
-  moreBtn.onclick = function() {
+
+  moreBtn.onclick = function () {
     btnArticle = articlesNav.querySelector('.is-active');
     console.log(btnArticle);
     if (btnArticle.getAttribute('data-filter') === "in-sport") {
       moreArticles(articlesSport);
-    } else if (btnArticle.getAttribute('data-filter') === "in-home"){
+    } else if (btnArticle.getAttribute('data-filter') === "in-home") {
       moreArticles(articlesHome);
-    } else if (btnArticle.getAttribute('data-filter') === "in-life"){
+    } else if (btnArticle.getAttribute('data-filter') === "in-life") {
       moreArticles(articlesLife);
     }
     scrollWidthFunction();
   }
+
 
   window.addEventListener("resize", scrollWidthFunction());
   // функция переноса строки в зависимости от ширины экрана
@@ -51,7 +56,7 @@
         articleItems[i].after(lineBreak);
       }
     } else {
-      for (let i = 0; i <= articleItems.length -1; i++) {
+      for (let i = 0; i <= articleItems.length - 1; i++) {
         let lineBreak = document.createElement('div');
         lineBreak.classList.add('clearfix');
         lineBreak.classList.add('maxWidth');
@@ -74,44 +79,43 @@
     let lengthArticle = articleSection.querySelectorAll('.is-active').length;
     console.log('OOOOOOOOOOOOOOOOOOOOO', lengthArticle);
     let j = lengthArticle;
-    for (let i = 0; i < 6; i++){
+    for (let i = 0; i < 6; i++) {
       j++;
-      if (noActiveArticle[j] === undefined) {
+      if (noActiveArticle[j-1] === undefined) {
         moreBtn.classList.add('hidden-Element');
         return;
-      } else 
-      {
+      } else {
         moreBtn.classList.remove('hidden-Element');
       }
-      noActiveArticle[j].classList.remove('article__no-active');
-      noActiveArticle[j].classList.add('is-active');  
+      noActiveArticle[j-1].classList.remove('article__no-active');
+      noActiveArticle[j-1].classList.add('is-active');
     }
   }
 
-  let removeChildren = function(item) {
+  let removeChildren = function (item) {
     while (item.firstChild) {
       item.removeChild(item.firstChild);
     }
-    
+
   }
 
-  let updateChildren = function(item, children) {
+  let updateChildren = function (item, children) {
     removeChildren(item);
 
-    for (let i = 0; i <= children.length -1; i++) {
+    for (let i = 0; i <= children.length - 1; i++) {
       item.appendChild(children[i]);
     }
     console.log(children)
     // moreArticles(); 
-    scrollWidthFunction();        
-    
+    scrollWidthFunction();
+
   };
   //библиотека для кнопок навигации
   window.myLib = {};
-  window.myLib.closestItemByClass = function(item, className) {
+  window.myLib.closestItemByClass = function (item, className) {
     let node = item;
 
-    while(node) {
+    while (node) {
       if (node.classList.contains(className)) {
         return node;
       }
@@ -121,10 +125,10 @@
   };
 
   //сортировка по категориям
-  articlesNav.addEventListener('click', function(e) {
+  articlesNav.addEventListener('click', function (e) {
     let target = e.target;
     let item = myLib.closestItemByClass(target, 'articles-nav__btn');
-    
+
     if (item === null || item.classList.contains('is-active')) {
       return;
     }
@@ -161,25 +165,23 @@
 
   });
 
+  let btnCategorySport = articlesNav.querySelector('.articles__sport');
+  let btnCategoryHome = articlesNav.querySelector('.articles__home');
+  let btnCategoryLife = articlesNav.querySelector('.articles__life');
 
 
-  let btnCategorySport = articlesNav.querySelector('.articles-nav__btn#sport');
-  let btnCategoryHome = articlesNav.querySelector('.articles-nav__btn#home');
-  let btnCategoryLife = articlesNav.querySelector('.articles-nav__btn#life');
-
-  btnCategorySport.onclick = function() {
+  btnCategorySport.onclick = function () {
+    
     articlesHiddenfunction();
   }
 
-  btnCategoryHome.onclick = function() {
+  btnCategoryHome.onclick = function () {
     articlesHiddenfunction();
   }
 
-  btnCategoryLife.onclick = function() {
+  btnCategoryLife.onclick = function () {
     articlesHiddenfunction();
   }
-
-
 
 
 })();
