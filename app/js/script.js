@@ -8,9 +8,6 @@
   let articlesLife = articleSection.querySelectorAll('.life');
   let articles = document.querySelector('.article');
   let articlesNav = document.querySelector('.articles-nav');
-  console.log(articlesSport);
-  console.log(articlesHome);
-  console.log(articlesLife);
 
   moreArticles(articlesSport);
   scrollWidthFunction();
@@ -18,7 +15,6 @@
 
   moreBtn.onclick = function () {
     btnArticle = articlesNav.querySelector('.is-active');
-    console.log(btnArticle);
     if (btnArticle.getAttribute('data-filter') === "in-sport") {
       moreArticles(articlesSport);
     } else if (btnArticle.getAttribute('data-filter') === "in-home") {
@@ -77,18 +73,19 @@
   function moreArticles(articlesCategory) {
     let noActiveArticle = articlesCategory;
     let lengthArticle = articleSection.querySelectorAll('.is-active').length;
-    console.log('OOOOOOOOOOOOOOOOOOOOO', lengthArticle);
     let j = lengthArticle;
     for (let i = 0; i < 6; i++) {
-      j++;
-      if (noActiveArticle[j-1] === undefined) {
+      if (noActiveArticle[j+1] === undefined) {
         moreBtn.classList.add('hidden-Element');
+        noActiveArticle[j].classList.remove('article__no-active');
+        noActiveArticle[j].classList.add('is-active');
         return;
       } else {
         moreBtn.classList.remove('hidden-Element');
       }
-      noActiveArticle[j-1].classList.remove('article__no-active');
-      noActiveArticle[j-1].classList.add('is-active');
+      noActiveArticle[j].classList.remove('article__no-active');
+      noActiveArticle[j].classList.add('is-active');
+      j++;
     }
   }
 
@@ -105,8 +102,6 @@
     for (let i = 0; i <= children.length - 1; i++) {
       item.appendChild(children[i]);
     }
-    console.log(children)
-    // moreArticles(); 
     scrollWidthFunction();
 
   };
