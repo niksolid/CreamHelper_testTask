@@ -164,19 +164,16 @@
   let btnCategoryHome = articlesNav.querySelector('.articles__home');
   let btnCategoryLife = articlesNav.querySelector('.articles__life');
 
-
-  btnCategorySport.onclick = function () {
-    
+  btnCategorySport.addEventListener('click', () => {
     articlesHiddenfunction();
-  }
+  })
 
-  btnCategoryHome.onclick = function () {
+  btnCategoryHome.addEventListener('click', () => {
     articlesHiddenfunction();
-  }
+  })
 
-  btnCategoryLife.onclick = function () {
+  btnCategoryLife.addEventListener('click', () => {
     articlesHiddenfunction();
-  }
-
+  })
 
 })();
