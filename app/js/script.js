@@ -1,44 +1,41 @@
-; (function () {
+(function () {
+  const articleSection = document.querySelector('.article')
+  const articleItems = articleSection.querySelectorAll('.article__item')
+  const moreBtn = document.querySelector('.article-more__btn')
+  const articlesSport = articleSection.querySelectorAll('.sport')
+  const articlesHome = articleSection.querySelectorAll('.home')
+  const articlesLife = articleSection.querySelectorAll('.life')
+  const articles = document.querySelector('.article')
+  const articlesNav = document.querySelector('.articles-nav')
 
-  let articleSection = document.querySelector('.article');
-  let articleItems = articleSection.querySelectorAll('.article__item');
-  let moreBtn = document.querySelector('.article-more__btn');
-  let articlesSport = articleSection.querySelectorAll('.sport');
-  let articlesHome = articleSection.querySelectorAll('.home');
-  let articlesLife = articleSection.querySelectorAll('.life');
-  let articles = document.querySelector('.article');
-  let articlesNav = document.querySelector('.articles-nav');
-
-  moreArticles(articlesSport);
-  scrollWidthFunction();
-
+  moreArticles(articlesSport)
+  scrollWidthFunction()
 
   moreBtn.onclick = function () {
-    btnArticle = articlesNav.querySelector('.is-active');
-    if (btnArticle.getAttribute('data-filter') === "in-sport") {
-      moreArticles(articlesSport);
-    } else if (btnArticle.getAttribute('data-filter') === "in-home") {
-      moreArticles(articlesHome);
-    } else if (btnArticle.getAttribute('data-filter') === "in-life") {
-      moreArticles(articlesLife);
+    const btnArticle = articlesNav.querySelector('.is-active')
+    if (btnArticle.getAttribute('data-filter') === 'in-sport') {
+      moreArticles(articlesSport)
+    } else if (btnArticle.getAttribute('data-filter') === 'in-home') {
+      moreArticles(articlesHome)
+    } else if (btnArticle.getAttribute('data-filter') === 'in-life') {
+      moreArticles(articlesLife)
     }
-    scrollWidthFunction();
+    scrollWidthFunction()
   }
 
-
-  window.addEventListener("resize", scrollWidthFunction());
+  window.addEventListener('resize', scrollWidthFunction());
   // функция переноса строки в зависимости от ширины экрана
-  function scrollWidthFunction() {
-    let scrollWidth = document.body.scrollWidth;
-    let allClearfix = articleSection.querySelectorAll('.clearfix');
-    for (let clearfix of allClearfix) {
+  function scrollWidthFunction () {
+    const scrollWidth = document.body.scrollWidth;
+    const allClearfix = articleSection.querySelectorAll('.clearfix');
+    for (const clearfix of allClearfix) {
       clearfix.remove();
     }
-    let eArticles = articleSection.querySelectorAll('.is-active');
+    const eArticles = articleSection.querySelectorAll('.is-active');
 
     if (scrollWidth >= 1000) {
       for (let i = 2; i <= eArticles.length - 1; i = i + 3) {
-        let lineBreak = document.createElement('div');
+        const lineBreak = document.createElement('div');
         lineBreak.classList.add('clearfix');
         lineBreak.classList.add('maxWidth');
         eArticles[i].after(lineBreak);
@@ -46,14 +43,14 @@
     } else if (scrollWidth >= 650) {
       for (let i = 1; i <= articleItems.length - 1; i = i + 2) {
 
-        let lineBreak = document.createElement('div');
+        const lineBreak = document.createElement('div');
         lineBreak.classList.add('clearfix');
         lineBreak.classList.add('maxWidth');
         articleItems[i].after(lineBreak);
       }
     } else {
       for (let i = 0; i <= articleItems.length - 1; i++) {
-        let lineBreak = document.createElement('div');
+        const lineBreak = document.createElement('div');
         lineBreak.classList.add('clearfix');
         lineBreak.classList.add('maxWidth');
         articleItems[i].after(lineBreak);
@@ -61,119 +58,115 @@
     }
   };
 
-  //функция - скрыть все блоки статей
-  function articlesHiddenfunction() {
-    for (articleItem of articleItems) {
+  // функция - скрыть все блоки статей
+  function articlesHiddenfunction () {
+    for (const articleItem of articleItems) {
       articleItem.classList.remove('is-active')
-      articleItem.classList.add('article__no-active');
+      articleItem.classList.add('article__no-active')
     }
   }
 
   // функция добавления статей
-  function moreArticles(articlesCategory) {
-    let noActiveArticle = articlesCategory;
-    let lengthArticle = articleSection.querySelectorAll('.is-active').length;
+  function moreArticles (articlesCategory) {
+    const noActiveArticle = articlesCategory;
+    const lengthArticle = articleSection.querySelectorAll('.is-active').length
     let j = lengthArticle;
     for (let i = 0; i < 6; i++) {
       if (noActiveArticle[j+1] === undefined) {
-        moreBtn.classList.add('hidden-Element');
-        noActiveArticle[j].classList.remove('article__no-active');
-        noActiveArticle[j].classList.add('is-active');
-        return;
+        moreBtn.classList.add('hidden-Element')
+        noActiveArticle[j].classList.remove('article__no-active')
+        noActiveArticle[j].classList.add('is-active')
+        return
       } else {
-        moreBtn.classList.remove('hidden-Element');
+        moreBtn.classList.remove('hidden-Element')
       }
-      noActiveArticle[j].classList.remove('article__no-active');
-      noActiveArticle[j].classList.add('is-active');
-      j++;
+      noActiveArticle[j].classList.remove('article__no-active')
+      noActiveArticle[j].classList.add('is-active')
+      j++
     }
   }
 
-  let removeChildren = function (item) {
+  const removeChildren = function (item) {
     while (item.firstChild) {
-      item.removeChild(item.firstChild);
+      item.removeChild(item.firstChild)
     }
 
   }
 
-  let updateChildren = function (item, children) {
+  const updateChildren = function (item, children) {
     removeChildren(item);
 
     for (let i = 0; i <= children.length - 1; i++) {
-      item.appendChild(children[i]);
+      item.appendChild(children[i])
     }
-    scrollWidthFunction();
+    scrollWidthFunction()
+  }
 
-  };
-  //библиотека для кнопок навигации
-  window.myLib = {};
+  // библиотека для кнопок навигации
+  window.myLib = {}
   window.myLib.closestItemByClass = function (item, className) {
-    let node = item;
+    let node = item
 
     while (node) {
       if (node.classList.contains(className)) {
-        return node;
+        return node
       }
-      node = node.parentElement;
+      node = node.parentElement
     }
-    return null;
-  };
+    return null
+  }
 
-  //сортировка по категориям
+  // сортировка по категориям
   articlesNav.addEventListener('click', function (e) {
-    let target = e.target;
-    let item = myLib.closestItemByClass(target, 'articles-nav__btn');
+    const target = e.target
+    const item = window.myLib.closestItemByClass(target, 'articles-nav__btn')
 
     if (item === null || item.classList.contains('is-active')) {
-      return;
+      return
     }
-    e.preventDefault();
-    var filterValue = item.getAttribute('data-filter');
-    let previousBtnActive = articlesNav.querySelector('.articles-nav__btn.is-active');
+    e.preventDefault()
+    var filterValue = item.getAttribute('data-filter')
+    const previousBtnActive = articlesNav.querySelector('.articles-nav__btn.is-active')
 
-    previousBtnActive.classList.remove('is-active');
-    item.classList.add('is-active');
+    previousBtnActive.classList.remove('is-active')
+    item.classList.add('is-active')
 
     // if (filterValue === 'in-sport') {
     //   updateChildren(articles, articleItems);
     //   return;
     // }
 
-    let filteredItems = [];
+    const filteredItems = [];
     for (let i = 0; i < articleItems.length; i += 1) {
-      let current = articleItems[i];
+      const current = articleItems[i]
       if (current.getAttribute('data-category') === filterValue) {
-        filteredItems.push(current);
+        filteredItems.push(current)
       }
     }
     if (filterValue === 'in-home') {
-      moreArticles(articlesHome);
+      moreArticles(articlesHome)
     } else if (filterValue === 'in-life') {
-      moreArticles(articlesLife);
+      moreArticles(articlesLife)
     } else if (filterValue === 'in-sport') {
-      moreArticles(articlesSport);
+      moreArticles(articlesSport)
     }
 
+    updateChildren(articles, filteredItems)
+  })
 
-    updateChildren(articles, filteredItems);
-
-
-  });
-
-  let btnCategorySport = articlesNav.querySelector('.articles__sport');
-  let btnCategoryHome = articlesNav.querySelector('.articles__home');
-  let btnCategoryLife = articlesNav.querySelector('.articles__life');
+  const btnCategorySport = articlesNav.querySelector('.articles__sport')
+  const btnCategoryHome = articlesNav.querySelector('.articles__home')
+  const btnCategoryLife = articlesNav.querySelector('.articles__life')
 
   btnCategorySport.addEventListener('click', () => {
-    articlesHiddenfunction();
+    articlesHiddenfunction()
   })
 
   btnCategoryHome.addEventListener('click', () => {
-    articlesHiddenfunction();
+    articlesHiddenfunction()
   })
 
   btnCategoryLife.addEventListener('click', () => {
-    articlesHiddenfunction();
+    articlesHiddenfunction()
   })
-
-})();
+})()
